@@ -1,0 +1,19 @@
+/* mainApp/static/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1cdc;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}

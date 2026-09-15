@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Security</h1>
+            <div class="flex items-center space-x-4">
+                <a href="{% url 'dashboard' %}" class="bg-blue-500 hover:bg-blue-700 px-4 py-2 rounded">Dashboard</a>
+                <a href="{% url 'logout' %}" class="bg-red-500 hover:bg-red-700 px-4 py-2 rounded">Logout</a>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mx-auto mt-8 p-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+            <h2 class="text-xl font-semibold mb-4">Login History</h2>
+            {% if login_history %}
+                <div class="space-y-2">
+                    {% for login in login_history %}
+                    <div class="flex justify-between items-center border-b pb-2">
+                        <span class="text-gray-600">{{ login.login_time }}</span>
+                        <span class="text-sm text-gray-500">{{ login.ip_address }}</span>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="text-gray-500">No login history found.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
